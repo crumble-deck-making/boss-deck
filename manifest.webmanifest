@@ -1,0 +1,9 @@
+{
+  "name": "개인 덱 저장소",
+  "short_name": "덱 저장소",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0e3442",
+  "theme_color": "#123947",
+  "description": "보스별로 쿠키 12개와 펫 3개 덱을 개인 기기에 저장하는 웹앱"
+}
