@@ -436,6 +436,48 @@ input{
   border:2px solid #e0ad5a!important;
   box-shadow:0 8px 22px rgba(0,0,0,.32)!important;
 }
+
+/* Selected tray: show every selected item at once (no horizontal scrolling) */
+.selected-tray{
+  padding:9px 10px 10px!important;
+}
+.selected-tray-list{
+  display:grid!important;
+  grid-template-columns:repeat(6, minmax(0, 1fr))!important;
+  gap:6px!important;
+  overflow:visible!important;
+  padding-bottom:0!important;
+}
+.selected-mini{
+  width:100%!important;
+  height:auto!important;
+  aspect-ratio:46/52!important;
+  min-width:0!important;
+  flex:none!important;
+}
+.selected-mini.pet{
+  height:auto!important;
+  aspect-ratio:1/1!important;
+}
+/* 3 pets stay compact on one row */
+.selected-tray-list:has(.selected-mini.pet){
+  grid-template-columns:repeat(3, 52px)!important;
+}
+@media(max-width:430px){
+  .selected-tray-list{
+    grid-template-columns:repeat(6, minmax(0, 1fr))!important;
+    gap:4px!important;
+  }
+  .selected-mini .mini-num{
+    min-width:16px!important;
+    height:16px!important;
+    font-size:9px!important;
+  }
+  .selected-tray-list:has(.selected-mini.pet){
+    grid-template-columns:repeat(3, 46px)!important;
+  }
+}
+
 </style>
 <meta content="쿠키런 크럼블 보스별 덱 저장 및 빠른 정보 확인" name="description"/></head>
 <body>
